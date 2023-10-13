@@ -1,3 +1,7 @@
+* {
+  color: #8c61ff;
+}
+
 .large {
   font-size: var(--font-size-xxl);
   font-weight: var(--font-weight-bold);
@@ -34,13 +38,13 @@
   line-height: var(--line-height-m); // 171.429%
 }
 
-.subTitle1 {
+.subtitle1 {
   font-size: var(--font-size-m);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-m); // 150%
 }
 
-.subTitle2 {
+.subtitle2 {
   font-size: var(--font-size-s);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-m); // 171.429%
@@ -64,6 +68,7 @@
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-m); // 171.429%
   color: #397df6;
+  text-decoration: underline;
 }
 
 .link2,
@@ -72,4 +77,5 @@
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-s); // 133.333%
   color: #397df6;
+  text-decoration: underline;
 }

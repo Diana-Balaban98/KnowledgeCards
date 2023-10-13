@@ -9,6 +9,9 @@ html {
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
   box-sizing: border-box;
 }
 
@@ -25,8 +28,12 @@ option {
   color: inherit;
 }
 
-a:visited {
-  color: inherit;
+a {
+  cursor: pointer;
+  &:visited {
+    color: inherit;
+    text-decoration: underline;
+  }
 }
 
 body {

@@ -1,3 +1,5 @@
+import { Typography } from '@/components'
+
 export function App() {
-  return <div>Hello</div>
+  return <Typography>Text</Typography>
 }

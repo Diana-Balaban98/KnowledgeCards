@@ -8,6 +8,7 @@ export type ButtonProps<T extends ElementType = 'button'> = {
   fullWidth?: boolean
   variant?: 'link' | 'primary' | 'secondary' | 'tertiary'
 } & ComponentPropsWithoutRef<T>
+// add children?: ReactNode to the props
 
 export const Button = <T extends ElementType = 'button'>(
   props: ButtonProps<T> & Omit<ComponentPropsWithoutRef<T>, keyof ButtonProps<T>>

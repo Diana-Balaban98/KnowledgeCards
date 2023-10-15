@@ -9,10 +9,10 @@ html {
 *,
 *::before,
 *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: 0;
-  box-sizing: border-box;
 }
 
 input,
@@ -30,6 +30,7 @@ option {
 
 a {
   cursor: pointer;
+
   &:visited {
     color: inherit;
     text-decoration: underline;

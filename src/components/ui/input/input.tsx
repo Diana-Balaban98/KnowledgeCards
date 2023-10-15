@@ -18,7 +18,7 @@ export type InputProps = {
 } & InputHTMLAttributes<HTMLInputElement>
 
 export const Input: FC<InputProps> = props => {
-  const { className, fullWidth, label, ...restProps } = props
+  const { className, error, fullWidth, label, ...restProps } = props
 
   return (
     <>
@@ -29,10 +29,19 @@ export const Input: FC<InputProps> = props => {
               {label}
             </Typography>
           )}
-          <input
-            className={`${s.defaultInput} ${fullWidth ? s.fullWidth : ''} ${className}`}
-            {...restProps}
-          />
+          <div className={s.innerInput}>
+            <input
+              className={`${s.defaultInput} ${fullWidth ? s.fullWidth : ''} ${className} ${
+                error ? s.inputWithError : ''
+              }`}
+              {...restProps}
+            />
+            {error && (
+              <Typography as={'span'} className={s.error} variant={'caption'}>
+                {error}
+              </Typography>
+            )}
+          </div>
         </div>
       </label>
     </>

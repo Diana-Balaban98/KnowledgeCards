@@ -22,15 +22,29 @@
   }
 }
 
+.inputWithError {
+  border: 1px solid var(--color-danger-300);
+
+  &::placeholder {
+    color: var(--color-danger-300);
+  }
+}
+
 .fullWidth {
   width: 100%;
 }
 
-.wrapperInput {
+.wrapperInput,
+.innerInput {
   display: flex;
   flex-direction: column;
 }
 
 .label {
   color: var(--color-dark-100);
+}
+
+.error {
+  margin-top: 5px;
+  color: var(--color-danger-300);
 }

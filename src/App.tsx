@@ -1,3 +1,5 @@
+import { Input } from '@/components'
+
 export function App() {
-  return <div>Hello</div>
+  return <Input error={'Вот ошибка!'} placeholder={'Error'} />
 }

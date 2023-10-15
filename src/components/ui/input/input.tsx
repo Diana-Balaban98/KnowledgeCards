@@ -1,5 +1,7 @@
 import { CSSProperties, FC, FormEventHandler, InputHTMLAttributes, ReactNode } from 'react'
 
+import { Typography } from '@/components'
+
 import s from './input.module.scss'
 
 export type InputProps = {
@@ -16,13 +18,22 @@ export type InputProps = {
 } & InputHTMLAttributes<HTMLInputElement>
 
 export const Input: FC<InputProps> = props => {
-  const { className, label, ...restProps } = props
+  const { className, fullWidth, label, ...restProps } = props
 
   return (
     <>
       <label>
-        {label && <span>{label}</span>}
-        <input className={`${s.defaultInput} ${className}`} {...restProps} />
+        <div className={s.wrapperInput}>
+          {label && (
+            <Typography as={'span'} className={s.label} variant={'body2'}>
+              {label}
+            </Typography>
+          )}
+          <input
+            className={`${s.defaultInput} ${fullWidth ? s.fullWidth : ''} ${className}`}
+            {...restProps}
+          />
+        </div>
       </label>
     </>
   )

@@ -18,7 +18,9 @@ export type InputProps = {
 } & InputHTMLAttributes<HTMLInputElement>
 
 export const Input: FC<InputProps> = props => {
-  const { className, error, fullWidth, label, ...restProps } = props
+  const { className, clearable, error, fullWidth, label, ...restProps } = props
+  const withError = error ? s.inputWithError : ''
+  const inFullWidth = fullWidth ? s.fullWidth : ''
 
   return (
     <>
@@ -31,9 +33,7 @@ export const Input: FC<InputProps> = props => {
           )}
           <div className={s.innerInput}>
             <input
-              className={`${s.defaultInput} ${fullWidth ? s.fullWidth : ''} ${className} ${
-                error ? s.inputWithError : ''
-              }`}
+              className={`${s.defaultInput} ${inFullWidth} ${className} ${withError}`}
               {...restProps}
             />
             {error && (

@@ -1,0 +1,50 @@
+.defaultInput {
+  width: 284px;
+  height: 36px;
+  padding: 6px 8px 6px 12px;
+
+  background-color: transparent;
+  border: 1px solid var(--color-dark-300);
+  border-radius: 2px;
+  outline: none;
+
+  &:hover {
+    background-color: var(--color-dark-700);
+    border: 1px solid var(--color-dark-100);
+  }
+
+  &:focus {
+    border: 2px solid var(--color-info-700);
+  }
+
+  &:active {
+    border: 1px solid var(--color-light-100);
+  }
+}
+
+.inputWithError {
+  border: 1px solid var(--color-danger-300);
+
+  &::placeholder {
+    color: var(--color-danger-300);
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.wrapperInput,
+.innerInput {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  color: var(--color-dark-100);
+}
+
+.error {
+  margin-top: 5px;
+  color: var(--color-danger-300);
+}

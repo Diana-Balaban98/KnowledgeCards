@@ -1,5 +1,6 @@
 export { default as EditOutlineIcon } from '@/assets/icons-components/EditOutlineIcon'
 export { default as EyeOffOutlineIcon } from '@/assets/icons-components/EyeOffOutlineIcon'
 export { default as EyeOutlineIcon } from '@/assets/icons-components/EyeOutlineIcon'
+export { default as ImageOutlineIcon } from '@/assets/icons-components/ImageOutlineIcon'
 export { default as LogoutOutlineIcon } from '@/assets/icons-components/LogoutOutlineIcon'
 export { default as PersonOutlineIcon } from '@/assets/icons-components/PersonOutlineIcon'

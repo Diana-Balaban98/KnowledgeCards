@@ -1,3 +1,4 @@
+export { default as CloseOutlineIcon } from '@/assets/icons-components/CloseOutlineIcon'
 export { default as EditOutlineIcon } from '@/assets/icons-components/EditOutlineIcon'
 export { default as EyeOffOutlineIcon } from '@/assets/icons-components/EyeOffOutlineIcon'
 export { default as EyeOutlineIcon } from '@/assets/icons-components/EyeOutlineIcon'

@@ -1,3 +1,4 @@
+export { default as ArrowBackIcon } from '@/assets/icons-components/ArrowBackIcon'
 export { default as ArrowDownIcon } from '@/assets/icons-components/ArrowDownIcon'
 export { default as ArrowUpIcon } from '@/assets/icons-components/ArrowUpIcon'
 export { default as CloseIcon } from '@/assets/icons-components/CloseIcon'

@@ -1,4 +1,5 @@
 export { default as ArrowDownIcon } from '@/assets/icons-components/ArrowDownIcon'
+export { default as ArrowUpIcon } from '@/assets/icons-components/ArrowUpIcon'
 export { default as CloseOutlineIcon } from '@/assets/icons-components/CloseOutlineIcon'
 export { default as EditOutlineIcon } from '@/assets/icons-components/EditOutlineIcon'
 export { default as EyeOffOutlineIcon } from '@/assets/icons-components/EyeOffOutlineIcon'

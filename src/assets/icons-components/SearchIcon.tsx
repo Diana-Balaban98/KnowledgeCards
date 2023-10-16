@@ -2,7 +2,7 @@ import { forwardRef } from 'react'
 
 import { IconProps } from '@/assets/types'
 
-const SearchOutlineIcon = forwardRef<SVGSVGElement, IconProps>(
+const SearchIcon = forwardRef<SVGSVGElement, IconProps>(
   ({ color = 'black', size = '24px', ...props }, forwardedRef) => {
     return (
       <svg
@@ -25,4 +25,4 @@ const SearchOutlineIcon = forwardRef<SVGSVGElement, IconProps>(
   }
 )
 
-export default SearchOutlineIcon
+export default SearchIcon

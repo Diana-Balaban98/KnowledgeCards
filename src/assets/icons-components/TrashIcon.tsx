@@ -2,7 +2,7 @@ import { forwardRef } from 'react'
 
 import { IconProps } from '@/assets/types'
 
-const TrashOutlineIcon = forwardRef<SVGSVGElement, IconProps>(
+const TrashIcon = forwardRef<SVGSVGElement, IconProps>(
   ({ color = 'black', size = '24px', ...props }, forwardedRef) => {
     return (
       <svg
@@ -25,4 +25,4 @@ const TrashOutlineIcon = forwardRef<SVGSVGElement, IconProps>(
   }
 )
 
-export default TrashOutlineIcon
+export default TrashIcon

@@ -2,7 +2,7 @@ import { forwardRef } from 'react'
 
 import { IconProps } from '@/assets/types'
 
-const CloseOutlineIcon = forwardRef<SVGSVGElement, IconProps>(
+const CloseIcon = forwardRef<SVGSVGElement, IconProps>(
   ({ color = 'black', size = '24px', ...props }, forwardedRef) => {
     return (
       <svg
@@ -25,4 +25,4 @@ const CloseOutlineIcon = forwardRef<SVGSVGElement, IconProps>(
   }
 )
 
-export default CloseOutlineIcon
+export default CloseIcon

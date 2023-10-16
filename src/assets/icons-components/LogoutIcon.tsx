@@ -2,7 +2,7 @@ import { forwardRef } from 'react'
 
 import { IconProps } from '@/assets/types'
 
-const LogoutOutlineIcon = forwardRef<SVGSVGElement, IconProps>(
+const LogoutIcon = forwardRef<SVGSVGElement, IconProps>(
   ({ color = 'black', size = '24px', ...props }, forwardedRef) => {
     return (
       <svg
@@ -31,4 +31,4 @@ const LogoutOutlineIcon = forwardRef<SVGSVGElement, IconProps>(
   }
 )
 
-export default LogoutOutlineIcon
+export default LogoutIcon

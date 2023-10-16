@@ -2,7 +2,7 @@ import { forwardRef } from 'react'
 
 import { IconProps } from '@/assets/types'
 
-const EyeOutlineIcon = forwardRef<SVGSVGElement, IconProps>(
+const EyeIcon = forwardRef<SVGSVGElement, IconProps>(
   ({ color = 'black', size = '24px', ...props }, forwardedRef) => {
     return (
       <svg
@@ -31,4 +31,4 @@ const EyeOutlineIcon = forwardRef<SVGSVGElement, IconProps>(
   }
 )
 
-export default EyeOutlineIcon
+export default EyeIcon

@@ -5,4 +5,5 @@ export { default as EyeOutlineIcon } from '@/assets/icons-components/EyeOutlineI
 export { default as ImageOutlineIcon } from '@/assets/icons-components/ImageOutlineIcon'
 export { default as LogoutOutlineIcon } from '@/assets/icons-components/LogoutOutlineIcon'
 export { default as PersonOutlineIcon } from '@/assets/icons-components/PersonOutlineIcon'
+export { default as SearchOutlineIcon } from '@/assets/icons-components/SearchOutlineIcon'
 export { default as TrashOutlineIcon } from '@/assets/icons-components/TrashOutlineIcon'

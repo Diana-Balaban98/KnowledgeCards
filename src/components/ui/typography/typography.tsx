@@ -10,6 +10,7 @@ export type TypographyProps<T extends ElementType = 'p'> = {
     | 'body1'
     | 'body2'
     | 'caption'
+    | 'error'
     | 'h1'
     | 'h2'
     | 'h3'

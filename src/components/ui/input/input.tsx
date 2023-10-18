@@ -3,7 +3,6 @@ import {
   FormEventHandler,
   InputHTMLAttributes,
   KeyboardEvent,
-  ReactNode,
   forwardRef,
   useState,
 } from 'react'
@@ -16,11 +15,8 @@ import s from './input.module.scss'
 type VariantInput = 'default' | 'password' | 'search'
 
 export type InputProps = {
-  clearable?: boolean
   error?: string
   fullWidth?: boolean
-  iconLeft?: ReactNode
-  iconRight?: ReactNode
   label?: string
   onClear?: FormEventHandler<Element>
   onEnter?: (e: KeyboardEvent<HTMLInputElement>) => void
@@ -32,16 +28,15 @@ export type InputProps = {
 export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   {
     className,
-    clearable,
+    disabled,
     error,
     fullWidth,
-    iconLeft,
-    iconRight,
     label,
     onChange,
     onEnter,
     onKeyDown,
     onTextChange,
+    type,
     variant = 'default',
     ...restProps
   },
@@ -49,20 +44,24 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 ) {
   const [showPass, setShowPass] = useState(false)
 
-  const getTypeForInput = (showPassword: boolean, variant: VariantInput) => {
-    if (!showPassword && variant === 'password') {
+  const withError = error ? s.withErr : ''
+  const inFullWidth = fullWidth ? s.fullWidth : ''
+  const searchInfo = variant === 'search'
+  const indentIcon = searchInfo && s.ident
+  const switchPassword = variant === 'password'
+
+  const getTypeForInput = (showPassword: boolean, type?: string) => {
+    if (!showPassword && switchPassword) {
       return 'password'
     }
-    if (variant === 'search') {
+    if (searchInfo) {
       return 'search'
     }
 
-    return 'text'
+    return type ?? 'text'
   }
 
-  const typeInput = getTypeForInput(showPass, variant)
-  const withError = error ? s.inputWithError : ''
-  const inFullWidth = fullWidth ? s.fullWidth : ''
+  const typeInput = getTypeForInput(showPass, type)
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     onChange?.(e)
@@ -80,51 +79,33 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 
   return (
     <div className={s.box}>
-      <label>
-        {label && (
-          <Typography as={'span'} className={s.label} variant={'body2'}>
-            {label}
-          </Typography>
+      {label && (
+        <Typography as={'label'} className={s.label} variant={'body2'}>
+          {label}
+        </Typography>
+      )}
+      <div className={s.inputContainer}>
+        {searchInfo && <SearchIcon className={s.searchIcon} />}
+
+        <input
+          className={`${s.defaultInput} ${inFullWidth} ${className} ${withError} ${indentIcon}`}
+          disabled={disabled}
+          onChange={handleInputChange}
+          onKeyDown={handleEnterKey}
+          type={typeInput}
+          {...restProps}
+        />
+        {switchPassword && (
+          <button className={s.hidePassword} onClick={showPasswordHandler} type={'button'}>
+            {showPass ? <EyeIcon /> : <EyeOffIcon />}
+          </button>
         )}
-        <span className={s.inputContainer}>
-          {variant === 'password' && (
-            <button className={s.showPassword} onClick={showPasswordHandler} type={'button'}>
-              {showPass ? (
-                <EyeIcon color={'var(--color-light-100)'} size={'20px'} />
-              ) : (
-                <EyeOffIcon color={'var(--color-light-100)'} size={'20px'} />
-              )}
-            </button>
-          )}
-          {variant === 'search' && (
-            <div className={s.searchContainer}>
-              <SearchIcon />
-            </div>
-          )}
-          {!!iconLeft && (
-            <div className={s.iconContainer}>
-              <span className={s.iconLeft}>{iconLeft}</span>
-            </div>
-          )}
-          <input
-            className={`${s.defaultInput} ${inFullWidth} ${className} ${withError}`}
-            onChange={handleInputChange}
-            onKeyDown={handleEnterKey}
-            type={typeInput}
-            {...restProps}
-          />
-          {!!iconRight && (
-            <div className={s.iconContainer}>
-              <span className={s.iconRight}>{iconRight}</span>
-            </div>
-          )}
-        </span>
-        {error && (
-          <Typography as={'span'} className={s.error} variant={'caption'}>
-            {error}
-          </Typography>
-        )}
-      </label>
+      </div>
+      {error && (
+        <Typography as={'span'} className={s.err} variant={'error'}>
+          {error}
+        </Typography>
+      )}
     </div>
   )
 })

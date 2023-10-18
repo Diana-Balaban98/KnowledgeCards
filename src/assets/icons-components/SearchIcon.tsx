@@ -3,7 +3,7 @@ import { forwardRef } from 'react'
 import { IconProps } from '@/assets/types'
 
 const SearchIcon = forwardRef<SVGSVGElement, IconProps>(
-  ({ color = 'black', size = '24px', ...props }, forwardedRef) => {
+  ({ color = 'gray', size = '20px', ...props }, forwardedRef) => {
     return (
       <svg
         fill={'none'}

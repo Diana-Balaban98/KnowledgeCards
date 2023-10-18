@@ -1,67 +1,85 @@
 .box {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  display: inline-block;
+}
+
+.inputContainer {
+  position: relative;
+
+  .searchIcon {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    margin-left: 12px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    &:focus-visible {
+      outline: var(--outline-focus);
+    }
+  }
 }
 
 .defaultInput {
   width: 284px;
   height: 36px;
-  padding: 6px 8px 6px 12px;
+  padding: 6px 12px;
+
+  font-family: inherit;
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-m);
+  color: var(--color-light-100);
 
   background-color: transparent;
   border: 1px solid var(--color-dark-300);
   border-radius: 2px;
   outline: none;
 
+  transition: border-color 0.2s;
+
   &:hover {
     background-color: var(--color-dark-700);
     border: 1px solid var(--color-dark-100);
   }
 
-  &:focus {
+  &:focus-visible {
     border: 2px solid var(--color-info-700);
   }
 
   &:active {
     border: 1px solid var(--color-light-100);
-  }
-}
 
-.inputWithError {
-  border: 1px solid var(--color-danger-300);
-
-  &::placeholder {
-    color: var(--color-danger-300);
-  }
-}
-
-.fullWidth {
-  width: 100%;
-}
-
-.inputContainer {
-  position: relative;
-
-  .iconContainer {
-    pointer-events: none;
-
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    display: flex;
-    align-items: center;
-
-    height: 100%;
-
-    .iconLeft {
-      margin-left: 10px;
+    &::placeholder {
+      color: var(--color-light-100);
     }
+  }
 
-    .iconRight {
-      margin-right: 10px;
+  &:disabled {
+    &::placeholder {
+      color: var(--color-dark-300);
     }
+  }
+
+  &.ident {
+    padding-left: 41px;
+  }
+
+  &.withErr {
+    border: 1px solid var(--color-danger-300);
+
+    &::placeholder {
+      color: var(--color-danger-300);
+    }
+  }
+
+  &.fullWidth {
+    width: 100%;
   }
 }
 
@@ -69,26 +87,23 @@
   color: var(--color-dark-100);
 }
 
-.error {
-  margin-top: 5px;
-  color: var(--color-danger-300);
-}
-
-.searchContainer {
-}
-
-.showPassword {
-  all: unset;
-
-  pointer-events: painted;
+.hidePassword {
   cursor: pointer;
 
   position: absolute;
   top: 50%;
-  right: 10px;
+  right: 0;
+  bottom: 50%;
   transform: translateY(-50%);
 
-  display: flex;
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  padding: 0;
+
+  background: transparent;
+  border: 0;
+  outline: 0;
 
   &:focus-visible {
     outline: var(--outline-focus);

@@ -3,7 +3,7 @@ import { forwardRef } from 'react'
 import { IconProps } from '@/assets/types'
 
 const EyeIcon = forwardRef<SVGSVGElement, IconProps>(
-  ({ color = 'black', size = '24px', ...props }, forwardedRef) => {
+  ({ color = 'white', size = '20px', ...props }, forwardedRef) => {
     return (
       <svg
         fill={'none'}

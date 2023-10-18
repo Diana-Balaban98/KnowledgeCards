@@ -84,11 +84,11 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
           {label}
         </Typography>
       )}
-      <div className={s.inputContainer}>
+      <div className={`${s.inputContainer} ${inFullWidth}`}>
         {searchInfo && <SearchIcon className={s.searchIcon} />}
 
         <input
-          className={`${s.defaultInput} ${inFullWidth} ${className} ${withError} ${indentIcon}`}
+          className={`${s.defaultInput}  ${className} ${withError} ${indentIcon}`}
           disabled={disabled}
           onChange={handleInputChange}
           onKeyDown={handleEnterKey}

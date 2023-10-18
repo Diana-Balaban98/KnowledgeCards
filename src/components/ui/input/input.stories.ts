@@ -27,3 +27,44 @@ export const DefaultInput: Story = {
     placeholder: 'Input',
   },
 }
+
+export const SearchInput: Story = {
+  args: {
+    placeholder: 'Input search',
+    variant: 'search',
+  },
+}
+
+export const PasswordInput: Story = {
+  args: {
+    label: 'Input',
+    placeholder: 'Input',
+    variant: 'password',
+  },
+}
+
+export const DefaultInputWithErr: Story = {
+  args: {
+    error: 'Error!',
+    label: 'Input',
+    placeholder: 'Error',
+  },
+}
+
+export const InputWithSearchErr: Story = {
+  args: {
+    error: 'Error!',
+    label: 'Input',
+    placeholder: 'Input search',
+    variant: 'search',
+  },
+}
+
+export const InputWithPasswordErr: Story = {
+  args: {
+    error: 'Error!',
+    label: 'Input',
+    placeholder: 'Error',
+    variant: 'password',
+  },
+}

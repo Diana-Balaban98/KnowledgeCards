@@ -1,5 +1,5 @@
 .box {
-  display: inline-block;
+  width: fit-content;
 }
 
 .inputContainer {
@@ -84,6 +84,7 @@
 }
 
 .label {
+  display: inline-block;
   color: var(--color-dark-100);
 }
 
@@ -93,17 +94,14 @@
   position: absolute;
   top: 50%;
   right: 0;
-  bottom: 50%;
   transform: translateY(-50%);
 
-  width: 20px;
-  height: 20px;
   margin-right: 12px;
   padding: 0;
 
   background: transparent;
-  border: 0;
-  outline: 0;
+  border: none;
+  outline: none;
 
   &:focus-visible {
     outline: var(--outline-focus);

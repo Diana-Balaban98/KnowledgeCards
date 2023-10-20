@@ -15,13 +15,14 @@ export type CheckBoxProps = {
   onChange?: (checked: boolean) => void
   required?: boolean
 }
-export const Checkbox: FC<CheckBoxProps> = ({ onChange }) => {
+export const Checkbox: FC<CheckBoxProps> = ({ checked, onChange }) => {
   const uid = useId()
 
   return (
     <div className={s.containerCheckBox}>
       <div className={s.buttonContainer} tabIndex={Number('0')}>
         <CheckboxRadix.Root
+          checked={checked}
           className={s.checkboxRoot}
           defaultChecked
           id={uid}

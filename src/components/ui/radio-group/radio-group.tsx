@@ -29,7 +29,7 @@ export const RadioGroup = forwardRef<ElementRef<typeof RadixRadioGroup.Root>, Ra
             key={o.value}
             variant={'body2'}
           >
-            <div className={s.state}>
+            <div className={s.state} tabIndex={Number('1')}>
               <RadixRadioGroup.Item className={s.radio} value={o.value}>
                 <div className={s.frame}></div>
                 <RadixRadioGroup.Indicator className={s.indicator} />

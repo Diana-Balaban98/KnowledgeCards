@@ -22,9 +22,18 @@
 
     background-color: transparent;
     border-radius: 100%;
+    outline: none;
+
+    &:hover {
+      background-color: var(--color-dark-500);
+    }
 
     &:active {
       background-color: var(--color-accent-900);
+    }
+
+    &:focus {
+      background-color: var(--color-dark-700);
     }
   }
 

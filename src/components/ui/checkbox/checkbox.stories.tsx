@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import { Checkbox } from './'
 import { Meta, StoryObj } from '@storybook/react'
 const meta = {
@@ -20,14 +18,12 @@ export const Uncontrolled: Story = {
 
 export const CheckboxDefault: Story = {
   render: args => {
-    const [checked, setChecked] = useState(false)
-
     return (
       <Checkbox
         {...args}
-        checked={checked}
+        checked={false}
         label={'Click here'}
-        onChange={() => setChecked(!checked)}
+        onChange={(checked: boolean) => !checked}
       />
     )
   },

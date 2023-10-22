@@ -23,12 +23,7 @@ export const RadioGroup = forwardRef<ElementRef<typeof RadixRadioGroup.Root>, Ra
     return (
       <RadixRadioGroup.Root name={name} required {...restProps} className={s.box} ref={ref}>
         {options.map(o => (
-          <Typography
-            as={'label'}
-            className={`${s.item} ${disabled ? s.disabled : ''}`}
-            key={o.value}
-            variant={'body2'}
-          >
+          <Typography as={'label'} className={s.item} key={o.value} variant={'body2'}>
             <div className={s.state} tabIndex={Number('1')}>
               <RadixRadioGroup.Item className={s.radio} value={o.value}>
                 <div className={s.frame}></div>

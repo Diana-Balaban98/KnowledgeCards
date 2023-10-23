@@ -24,8 +24,8 @@ export function App() {
         <LogoutIcon color={'#fff'} size={'16px'} />
         <Typography variant={'subtitle2'}>Button primary</Typography>
       </Button>
-      <Input fullWidth label={'label'} variant={'password'} />
-      <Checkbox />
+      <Input fullWidth id={'122'} label={'label'} variant={'search'} />
+      <Checkbox id={'33'} label={'CheckBox'} />
     </>
   )
 }

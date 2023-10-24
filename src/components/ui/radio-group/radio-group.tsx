@@ -1,6 +1,6 @@
 import { ElementRef, forwardRef } from 'react'
 
-import { Typography } from '@/components/ui/typography'
+import { Label } from '@/components'
 import * as RadixRadioGroup from '@radix-ui/react-radio-group'
 
 import s from './radio-group.module.scss'
@@ -12,6 +12,7 @@ export type Option = {
 
 export type RadioGroupProps = {
   disabled?: boolean
+  id?: string
   name: string
   onValueChange?: (value: string) => void
   options: Option[]
@@ -19,19 +20,19 @@ export type RadioGroupProps = {
 }
 
 export const RadioGroup = forwardRef<ElementRef<typeof RadixRadioGroup.Root>, RadioGroupProps>(
-  ({ disabled, name, options, ...restProps }, ref) => {
+  ({ disabled, id, name, options, ...restProps }, ref) => {
     return (
-      <RadixRadioGroup.Root name={name} required {...restProps} className={s.box} ref={ref}>
+      <RadixRadioGroup.Root name={name} {...restProps} className={s.box} ref={ref}>
         {options.map(o => (
-          <Typography as={'label'} className={s.item} key={o.value} variant={'body2'}>
+          <div className={s.item} key={o.value}>
             <div className={s.state} tabIndex={Number('1')}>
-              <RadixRadioGroup.Item className={s.radio} value={o.value}>
+              <RadixRadioGroup.Item className={s.radio} id={`${id}-${o.value}`} value={o.value}>
                 <div className={s.frame}></div>
                 <RadixRadioGroup.Indicator className={s.indicator} />
               </RadixRadioGroup.Item>
             </div>
-            {o.label}
-          </Typography>
+            <Label htmlFor={`${id}-${o.value}`} title={o.label} />
+          </div>
         ))}
       </RadixRadioGroup.Root>
     )

@@ -1,6 +1,7 @@
 import { ElementRef, forwardRef } from 'react'
 
 import * as TabsSwitcher from '@radix-ui/react-tabs'
+import { clsx } from 'clsx'
 
 import s from './tab-switcher.module.scss'
 
@@ -19,12 +20,14 @@ type TabsProps = {
 
 export const Tabs = forwardRef<ElementRef<typeof TabsSwitcher.Root>, TabsProps>(
   ({ className, disabled, onValueChange, tabs, value }, ref) => {
+    const trigger = clsx(s.trigger, className)
+
     return (
       <TabsSwitcher.Root onValueChange={onValueChange} ref={ref} value={value}>
         <TabsSwitcher.List>
           {tabs.map(t => (
             <TabsSwitcher.Trigger
-              className={`${s.trigger} ${className}`}
+              className={trigger}
               disabled={disabled}
               key={t.value}
               value={t.value}

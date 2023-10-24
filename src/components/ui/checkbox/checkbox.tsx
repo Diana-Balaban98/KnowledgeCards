@@ -1,4 +1,4 @@
-import { ElementRef, forwardRef } from 'react'
+import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 
 import CheckIcon from '@/assets/icons-components/CheckIcon'
 import { Label } from '@/components'
@@ -6,13 +6,15 @@ import * as CheckboxRadix from '@radix-ui/react-checkbox'
 import { clsx } from 'clsx'
 
 import s from './checkbox.module.scss'
-type CheckProps = {
+
+type checkboxProps = {
   className?: string
   disabled?: boolean
   id?: string
   label?: string
-}
-export const Checkbox = forwardRef<ElementRef<typeof CheckboxRadix.Root>, CheckProps>(
+} & Omit<ComponentPropsWithoutRef<typeof CheckboxRadix.Root>, 'asChild'>
+
+export const Checkbox = forwardRef<ElementRef<typeof CheckboxRadix.Root>, checkboxProps>(
   ({ className, id, label, ...rest }, ref) => {
     const classNames = {
       btnContainer: s.buttonContainer,

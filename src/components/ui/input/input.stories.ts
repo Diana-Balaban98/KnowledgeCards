@@ -6,9 +6,6 @@ const meta = {
     disabled: {
       control: { type: 'boolean' },
     },
-    fullWidth: {
-      control: { type: 'boolean' },
-    },
     label: {
       control: { type: 'text' },
     },
@@ -31,7 +28,7 @@ export const DefaultInput: Story = {
 export const SearchInput: Story = {
   args: {
     placeholder: 'Input search',
-    variant: 'search',
+    search: true,
   },
 }
 
@@ -39,7 +36,7 @@ export const PasswordInput: Story = {
   args: {
     label: 'Input',
     placeholder: 'Input',
-    variant: 'password',
+    type: 'password',
   },
 }
 
@@ -56,7 +53,7 @@ export const InputWithSearchErr: Story = {
     error: 'Error!',
     label: 'Input',
     placeholder: 'Input search',
-    variant: 'search',
+    search: true,
   },
 }
 
@@ -65,6 +62,6 @@ export const InputWithPasswordErr: Story = {
     error: 'Error!',
     label: 'Input',
     placeholder: 'Error',
-    variant: 'password',
+    type: 'password',
   },
 }

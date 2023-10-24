@@ -1,5 +1,5 @@
 import { LogoutIcon } from '@/assets'
-import { Button, Checkbox, Input, Typography } from '@/components'
+import {Button, Checkbox, Input, Slider, Typography} from '@/components'
 
 export function App() {
   return (
@@ -26,6 +26,7 @@ export function App() {
       </Button>
       <Input fullWidth label={'label'} variant={'password'} />
       <Checkbox />
+        <Slider />
     </>
   )
 }

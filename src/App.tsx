@@ -26,7 +26,7 @@ export function App() {
       </Button>
       <Input fullWidth label={'label'} variant={'password'} />
       <Checkbox />
-        <Slider />
+        <Slider defaultValue={[0, 10]} max={10} step={1}/>
     </>
   )
 }

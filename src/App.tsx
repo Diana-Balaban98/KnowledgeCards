@@ -1,5 +1,6 @@
 import { LogoutIcon } from '@/assets'
-import { Button, Checkbox, Input, Typography } from '@/components'
+import { Button, Checkbox, Input, RadioGroup, Typography } from '@/components'
+import { LoginForm } from '@/components/auth/login-form'
 
 export function App() {
   return (
@@ -24,8 +25,16 @@ export function App() {
         <LogoutIcon color={'#fff'} size={'16px'} />
         <Typography variant={'subtitle2'}>Button primary</Typography>
       </Button>
-      <Input fullWidth id={'122'} label={'label'} variant={'search'} />
+      <Input id={'122'} label={'label'} />
       <Checkbox id={'33'} label={'CheckBox'} />
+      <RadioGroup
+        name={'List'}
+        options={[
+          { label: 'Js', value: 'Zhenya' },
+          { label: 'React', value: 'Diana' },
+        ]}
+      />
+      <LoginForm />
     </>
   )
 }

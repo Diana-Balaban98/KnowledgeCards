@@ -7,15 +7,16 @@ import { clsx } from 'clsx'
 
 import s from './checkbox.module.scss'
 
-type checkboxProps = {
+export type CheckboxProps = {
   className?: string
   disabled?: boolean
   id?: string
   label?: string
+  onBlur?: () => void
 } & Omit<ComponentPropsWithoutRef<typeof CheckboxRadix.Root>, 'asChild'>
 
-export const Checkbox = forwardRef<ElementRef<typeof CheckboxRadix.Root>, checkboxProps>(
-  ({ className, id, label, ...rest }, ref) => {
+export const Checkbox = forwardRef<ElementRef<typeof CheckboxRadix.Root>, CheckboxProps>(
+  ({ className, id, label, onBlur, ...rest }, ref) => {
     const classNames = {
       btnContainer: s.buttonContainer,
       checkIcon: s.checkIcon,
@@ -30,7 +31,7 @@ export const Checkbox = forwardRef<ElementRef<typeof CheckboxRadix.Root>, checkb
           {label && <Label htmlFor={id} title={label} />}
           <div className={classNames.btnContainer} tabIndex={Number('0')}>
             <CheckboxRadix.Root className={classNames.root} id={id} {...rest} ref={ref}>
-              <CheckboxRadix.Indicator className={classNames.checkIcon}>
+              <CheckboxRadix.Indicator className={classNames.checkIcon} onBlur={onBlur}>
                 <CheckIcon />
               </CheckboxRadix.Indicator>
             </CheckboxRadix.Root>

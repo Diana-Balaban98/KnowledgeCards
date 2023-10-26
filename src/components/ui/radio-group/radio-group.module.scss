@@ -1,5 +1,5 @@
 .box {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
 }
 
@@ -8,6 +8,8 @@
   align-items: center;
 
   .state {
+    cursor: pointer;
+
     display: flex;
     align-items: center;
     justify-content: center;

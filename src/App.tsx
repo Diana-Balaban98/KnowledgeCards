@@ -1,5 +1,10 @@
 import { LogoutIcon } from '@/assets'
+
 import { Button, Checkbox, Input, Select, Typography } from '@/components'
+
+import { Button, Checkbox, Input, RadioGroup, Typography } from '@/components'
+import { LoginForm } from '@/components/auth/login-form'
+
 
 export function App() {
   return (
@@ -26,6 +31,7 @@ export function App() {
       </Button>
       <Input id={'122'} label={'label'} />
       <Checkbox id={'33'} label={'CheckBox'} />
+
       <Select
         id={'7'}
         label={'Select'}
@@ -39,6 +45,15 @@ export function App() {
         ]}
         placeholder={'Выберите опцию'}
       />
+
+      <RadioGroup
+        name={'List'}
+        options={[
+          { label: 'Js', value: 'Zhenya' },
+          { label: 'React', value: 'Diana' },
+        ]}
+      />
+      <LoginForm />
     </>
   )
 }

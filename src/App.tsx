@@ -1,5 +1,5 @@
 import { LogoutIcon } from '@/assets'
-import { Button, Checkbox, Input, Typography } from '@/components'
+import { Button, Checkbox, Input, Select, Typography } from '@/components'
 
 export function App() {
   return (
@@ -24,8 +24,21 @@ export function App() {
         <LogoutIcon color={'#fff'} size={'16px'} />
         <Typography variant={'subtitle2'}>Button primary</Typography>
       </Button>
-      <Input fullWidth id={'122'} label={'label'} variant={'search'} />
+      <Input id={'122'} label={'label'} />
       <Checkbox id={'33'} label={'CheckBox'} />
+      <Select
+        id={'7'}
+        label={'Select'}
+        options={[
+          { label: 'Text', value: 'text' },
+          { label: 'Text2', value: 'text2' },
+          { label: 'Text3', value: 'text3' },
+          { label: 'Text4', value: 'text4' },
+          { label: 'Text5', value: 'text5' },
+          { label: 'Text6', value: 'text6' },
+        ]}
+        placeholder={'Выберите опцию'}
+      />
     </>
   )
 }

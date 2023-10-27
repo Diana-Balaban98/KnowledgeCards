@@ -1,0 +1,44 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 420px;
+  padding: 33px 36px 29px;
+
+  .title:not(:last-child) {
+    margin-bottom: 27px;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .inputLine {
+      margin-bottom: 24px;
+    }
+
+    .inputLine:nth-child(2) {
+      margin-bottom: 12px;
+    }
+
+    .checkboxLine {
+      margin-bottom: 6px;
+    }
+
+    .linkLine {
+      align-self: flex-end;
+      margin-bottom: 66px;
+    }
+
+    .buttonLine {
+      margin-bottom: 20px;
+    }
+  }
+
+  .textFormLine {
+    margin-bottom: 11px;
+  }
+}

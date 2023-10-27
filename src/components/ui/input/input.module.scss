@@ -1,4 +1,5 @@
 .box {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -71,6 +72,7 @@
   }
 
   &.withErr {
+    color: var(--color-danger-300);
     border: 1px solid var(--color-danger-300);
 
     &::placeholder {
@@ -87,6 +89,8 @@
   right: 0;
   transform: translateY(-50%);
 
+  width: 20px;
+  height: 20px;
   margin-right: 12px;
   padding: 0;
 

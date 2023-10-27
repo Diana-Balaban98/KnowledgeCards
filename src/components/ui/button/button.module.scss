@@ -1,7 +1,4 @@
-a,
-button {
-  all: unset;
-
+.btn {
   cursor: pointer;
 
   display: inline-flex;
@@ -9,8 +6,11 @@ button {
   align-items: center;
   justify-content: center;
 
-  padding: 4px 26.5px;
+  padding: 4px 25.5px;
 
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-m);
   color: var(--color-light-100);
   text-align: center;
 
@@ -106,6 +106,9 @@ button {
 .link {
   padding: 6px 11.5px;
 
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-m);
   color: var(--color-accent-500);
 
   background-color: transparent;

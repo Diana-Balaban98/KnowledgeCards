@@ -7,13 +7,14 @@ import s from './label.module.scss'
 type LabelProps = {
   className?: string
   color?: string
+  disabled?: boolean
   htmlFor?: string
   title?: string
 }
 
 export const Label = forwardRef<ElementRef<typeof Typography>, LabelProps>(
-  ({ className, color, htmlFor, title }, _ref) => {
-    const labelClassName = clsx(s.label, className)
+  ({ className, color = 'var(--color-dark-100)', disabled, htmlFor, title }, _ref) => {
+    const labelClassName = clsx(s.label, className, disabled && s.disabled)
 
     return (
       <Typography

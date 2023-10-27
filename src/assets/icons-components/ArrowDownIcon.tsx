@@ -3,7 +3,7 @@ import { forwardRef } from 'react'
 import { IconProps } from '@/assets/types'
 
 const ArrowDownIcon = forwardRef<SVGSVGElement, IconProps>(
-  ({ color = 'black', size = '24px', ...props }, forwardedRef) => {
+  ({ color = 'white', size = '16px', ...props }, forwardedRef) => {
     return (
       <svg
         fill={'none'}

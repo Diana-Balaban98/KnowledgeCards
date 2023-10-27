@@ -1,5 +1,5 @@
 import { LogoutIcon } from '@/assets'
-import { Button, Checkbox, Input, RadioGroup, SignInForm } from '@/components'
+import { Button, Checkbox, Input, RadioGroup, Select, SignInForm } from '@/components'
 
 export function App() {
   return (

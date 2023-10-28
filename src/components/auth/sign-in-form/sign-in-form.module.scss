@@ -1,20 +1,18 @@
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+@import '@/styles/mixins';
 
-  max-width: 420px;
-  padding: 33px 36px 29px;
+.card {
+  @include card;
 
   .title:not(:last-child) {
     margin-bottom: 27px;
   }
 
+  span {
+    text-decoration: underline;
+  }
+
   .form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    @include form;
 
     .inputLine {
       margin-bottom: 24px;

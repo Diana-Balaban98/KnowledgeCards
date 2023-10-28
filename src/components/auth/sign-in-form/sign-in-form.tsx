@@ -69,7 +69,7 @@ export const SignInForm = () => {
           <Typography variant={'body2'}>{"Don't have an account?"}</Typography>
         </div>
         <Button as={'a'} variant={'link'}>
-          Sign Up
+          <span>Sign Up</span>
         </Button>
       </>
     </Card>

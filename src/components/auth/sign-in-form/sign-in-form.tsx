@@ -59,9 +59,7 @@ export const SignInForm = () => {
           </div>
           <div className={s.buttonLine}>
             <Button fullWidth type={'submit'}>
-              <Typography as={'span'} variant={'subtitle2'}>
-                Sign In
-              </Typography>
+              Sign In
             </Button>
           </div>
         </form>

@@ -5,7 +5,7 @@ import { SignUpForm } from '@/components'
 const meta = {
   component: SignUpForm,
   tags: ['autodocs'],
-  title: 'Auth/SignInForm',
+  title: 'Auth/SignUpForm',
 } satisfies Meta<typeof SignUpForm>
 
 export default meta

@@ -1,0 +1,13 @@
+@import '@/styles/mixins';
+
+.card {
+  @include card;
+}
+
+.form {
+  @include form;
+
+  .inputLine:nth-child(3) {
+    margin-bottom: 60px;
+  }
+}

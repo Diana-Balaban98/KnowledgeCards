@@ -6,10 +6,31 @@
 
   max-width: 420px;
   padding: 33px 36px 29px;
+
+  span {
+    text-decoration: underline;
+  }
+
+  .title {
+    margin-bottom: 27px;
+  }
+
+  .textFormLine {
+    margin-bottom: 11px;
+    text-align: center;
+  }
 }
 
 @mixin form {
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  .inputLine {
+    margin-bottom: 24px;
+  }
+
+  .buttonLine {
+    margin-bottom: 20px;
+  }
 }

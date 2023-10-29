@@ -3,20 +3,8 @@
 .card {
   @include card;
 
-  .title:not(:last-child) {
-    margin-bottom: 27px;
-  }
-
-  span {
-    text-decoration: underline;
-  }
-
   .form {
     @include form;
-
-    .inputLine {
-      margin-bottom: 24px;
-    }
 
     .inputLine:nth-child(2) {
       margin-bottom: 12px;
@@ -30,13 +18,5 @@
       align-self: flex-end;
       margin-bottom: 66px;
     }
-
-    .buttonLine {
-      margin-bottom: 20px;
-    }
-  }
-
-  .textFormLine {
-    margin-bottom: 11px;
   }
 }

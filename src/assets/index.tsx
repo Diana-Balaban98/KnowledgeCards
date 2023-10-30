@@ -2,6 +2,7 @@ export { default as ArrowBackIcon } from '@/assets/icons-components/ArrowBackIco
 export { default as ArrowDownIcon } from '@/assets/icons-components/ArrowDownIcon'
 export { default as ArrowForwardIcon } from '@/assets/icons-components/ArrowForwardIcon'
 export { default as ArrowUpIcon } from '@/assets/icons-components/ArrowUpIcon'
+export { default as CheckEmailIcon } from '@/assets/icons-components/CheckEmailIcon'
 export { default as CheckIcon } from '@/assets/icons-components/CheckIcon'
 export { default as CloseIcon } from '@/assets/icons-components/CloseIcon'
 export { default as EditIcon } from '@/assets/icons-components/EditIcon'

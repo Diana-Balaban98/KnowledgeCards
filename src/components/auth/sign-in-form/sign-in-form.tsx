@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form'
+import { Link } from 'react-router-dom'
 
 import { Button, Card, Typography } from '@/components'
 import { ControlledCheckbox, ControlledInput } from '@/components/ui/controlled'
@@ -66,11 +67,10 @@ export const SignInForm = () => {
         <div className={s.textFormLine}>
           <Typography variant={'body2'}>{"Don't have an account?"}</Typography>
         </div>
-        <Button as={'a'} variant={'link'}>
+        <Button as={Link} to={'./'} variant={'link'}>
           <span>Sign Up</span>
         </Button>
       </>
     </Card>
   )
 }
-//&:not(:nth-child(:last-child))

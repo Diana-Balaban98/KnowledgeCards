@@ -1,0 +1,21 @@
+@import '@/styles/mixins';
+
+.card {
+  @include card;
+
+  padding-top: 37px;
+  text-align: center;
+
+  .titleCard {
+    margin-bottom: 27px;
+  }
+
+  .iconLine {
+    margin-bottom: 19px;
+  }
+
+  .textLine {
+    margin-bottom: 65px;
+    color: var(--color-light-900);
+  }
+}

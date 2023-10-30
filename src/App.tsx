@@ -1,5 +1,5 @@
 import { LogoutIcon } from '@/assets'
-import { Button, Checkbox, Input, RadioGroup, Select, SignInForm } from '@/components'
+import { Button, CheckEmailForm, Checkbox, Input, RadioGroup, Select } from '@/components'
 
 export function App() {
   return (
@@ -40,7 +40,7 @@ export function App() {
           { label: 'React', value: 'Diana' },
         ]}
       />
-      <SignInForm />
+      <CheckEmailForm />
     </>
   )
 }

@@ -1,31 +1,24 @@
-import { useForm } from 'react-hook-form'
+import { FunctionComponent } from 'react'
 
-import { Button, Card, Typography } from '@/components'
+import {
+  Button,
+  Card,
+  FormValues,
+  Typography,
+  createNewPasswordSchema,
+  useSignIn,
+} from '@/components'
 import { ControlledInput } from '@/components/ui/controlled'
 import { DevTool } from '@hookform/devtools'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
 
 import s from './create-password-form.module.scss'
 
-const loginSchema = z.object({
-  confirmPassword: z.string().min(3, 'Password must be at least 3 characters'),
-  email: z.string().email('Please enter a valid email'),
-  password: z.string().min(3, 'Password must be at least 3 characters'),
-})
+type Props = {
+  onSubmit: (data: FormValues) => void
+}
 
-type FormValues = z.infer<typeof loginSchema>
-
-export const CreateNewPasswordForm = () => {
-  const {
-    control,
-    formState: { errors },
-    handleSubmit,
-  } = useForm<FormValues>({ resolver: zodResolver(loginSchema) })
-
-  const onSubmit = handleSubmit((data: FormValues) => {
-    console.log(data)
-  })
+export const CreateNewPasswordForm: FunctionComponent<Props> = ({ onSubmit }) => {
+  const { control, errors, handleSubmit } = useSignIn(createNewPasswordSchema, { password: '' })
 
   return (
     <Card as={'article'} className={s.card}>
@@ -34,13 +27,13 @@ export const CreateNewPasswordForm = () => {
         Create new password
       </Typography>
       <>
-        <form className={s.form} onSubmit={onSubmit}>
+        <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
           <div className={s.inputLine}>
             <ControlledInput
               control={control}
-              error={errors.email?.message}
+              error={errors.password?.message}
               label={'Password'}
-              name={'email'}
+              name={'password'}
               type={'password'}
             />
           </div>

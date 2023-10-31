@@ -1,7 +1,23 @@
 import { LogoutIcon } from '@/assets'
-import { Button, Checkbox, Input, RadioGroup, Select, SignInForm } from '@/components'
+import {
+  Button,
+  Checkbox,
+  CreateNewPasswordForm,
+  ForgotPasswordForm,
+  FormValues,
+  Input,
+  PersonalInfo,
+  RadioGroup,
+  Select,
+  SignInForm,
+  SignUpForm,
+} from '@/components'
 
 export function App() {
+  const test = (data: FormValues) => {
+    console.log(data)
+  }
+
   return (
     <>
       <Button variant={'primary'}>Button Primary</Button>
@@ -40,7 +56,11 @@ export function App() {
           { label: 'React', value: 'Diana' },
         ]}
       />
-      <SignInForm />
+      <SignInForm onSubmit={test} />
+      <ForgotPasswordForm onSubmit={test} />
+      <SignUpForm onSubmit={test} />
+      <CreateNewPasswordForm onSubmit={test} />
+      <PersonalInfo />
     </>
   )
 }

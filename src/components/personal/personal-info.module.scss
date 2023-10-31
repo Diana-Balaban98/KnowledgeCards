@@ -1,0 +1,62 @@
+@import '@/styles/mixins';
+
+.card {
+  @include card;
+
+  .label {
+    position: relative;
+    height: 96px;
+    margin-bottom: 6px;
+
+    .inputContainer {
+      position: absolute;
+      top: 72px;
+      right: 0;
+
+      height: 24px;
+      padding: 4px;
+
+      background: var(--color-dark-300);
+      border-radius: 4px;
+
+      .input {
+        width: 0;
+        height: 100%;
+        appearance: initial;
+        background: none;
+
+        &[type='file'] {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .containerName {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 65px;
+    margin-bottom: 5px;
+
+    .edit {
+      all: unset;
+      cursor: pointer;
+      height: 16px;
+    }
+  }
+
+  .email {
+    margin-bottom: 13px;
+    color: var(--color-dark-100);
+  }
+}
+
+.form {
+  @include form;
+
+  .inputLine {
+    margin-bottom: 36px;
+  }
+}

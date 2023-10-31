@@ -1,6 +1,7 @@
 import { LogoutIcon } from '@/assets'
 import {
   Button,
+  CheckEmailForm,
   Checkbox,
   CreateNewPasswordForm,
   ForgotPasswordForm,
@@ -11,8 +12,8 @@ import {
   Select,
   SignInForm,
   SignUpForm,
+  Slider,
 } from '@/components'
-
 
 export function App() {
   const test = (data: FormValues) => {
@@ -57,6 +58,7 @@ export function App() {
           { label: 'React', value: 'Diana' },
         ]}
       />
+      <Slider defaultValue={[0, 10]} max={10} step={1} />
       <SignInForm onSubmit={test} />
       <ForgotPasswordForm onSubmit={test} />
       <SignUpForm onSubmit={test} />

@@ -1,29 +1,20 @@
+import { FunctionComponent } from 'react'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
-
-import { Button, Card, Typography } from '@/components'
+import { Button, Card, FormValues, Typography, signInSchema, useSignIn } from '@/components'
 import { ControlledCheckbox, ControlledInput } from '@/components/ui/controlled'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
 
 import s from './sign-in-form.module.scss'
-const loginSchema = z.object({
-  email: z.string().email('Please enter a valid email'),
-  password: z.string().min(3, 'Password must be at least 3 characters'),
-  rememberMe: z.boolean().default(false),
-})
 
-type FormValues = z.infer<typeof loginSchema>
+type Props = {
+  onSubmit: (data: FormValues) => void
+}
 
-export const SignInForm = () => {
-  const {
-    control,
-    formState: { errors },
-    handleSubmit,
-  } = useForm<FormValues>({ resolver: zodResolver(loginSchema) })
-
-  const onSubmit = handleSubmit((data: FormValues) => {
-    console.log(data)
+export const SignInForm: FunctionComponent<Props> = ({ onSubmit }) => {
+  const { control, errors, handleSubmit } = useSignIn(signInSchema, {
+    email: '',
+    password: '',
+    rememberMe: false,
   })
 
   return (
@@ -32,7 +23,7 @@ export const SignInForm = () => {
         Sign In
       </Typography>
       <>
-        <form className={s.form} onSubmit={onSubmit}>
+        <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
           <div className={s.inputLine}>
             <ControlledInput
               control={control}

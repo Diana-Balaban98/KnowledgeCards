@@ -1,3 +1,4 @@
+import { useId } from 'react'
 import { FieldValues, UseControllerProps, useController } from 'react-hook-form'
 
 import { Input, InputProps } from '@/components'
@@ -26,7 +27,7 @@ export const ControlledInput = <TFieldValues extends FieldValues>({
   return (
     <Input
       {...{
-        id: name,
+        id: useId(),
         onChange,
         value,
         ...InputProps,

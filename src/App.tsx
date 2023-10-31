@@ -13,6 +13,7 @@ import {
   SignUpForm,
 } from '@/components'
 
+
 export function App() {
   const test = (data: FormValues) => {
     console.log(data)
@@ -61,6 +62,7 @@ export function App() {
       <SignUpForm onSubmit={test} />
       <CreateNewPasswordForm onSubmit={test} />
       <PersonalInfo />
+      <CheckEmailForm />
     </>
   )
 }

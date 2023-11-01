@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react'
 
-import { Button, Card, FormValues, Typography, signUpSchema, useSignIn } from '@/components'
+import { Button, Card, FormValues, Typography, signUpSchema, useAuthForm } from '@/components'
 import { ControlledInput } from '@/components/ui/controlled'
 import { DevTool } from '@hookform/devtools'
 
@@ -11,7 +11,7 @@ type Props = {
 }
 
 export const SignUpForm: FunctionComponent<Props> = ({ onSubmit }) => {
-  const { control, errors, handleSubmit } = useSignIn(signUpSchema, {
+  const { control, errors, handleSubmit } = useAuthForm(signUpSchema, {
     confirmPassword: '',
     email: '',
     password: '',

@@ -7,6 +7,7 @@ import {
   ForgotPasswordForm,
   FormValues,
   Input,
+  Modal,
   PersonalInfo,
   RadioGroup,
   Select,
@@ -59,6 +60,7 @@ export function App() {
         ]}
       />
       <Slider defaultValue={[0, 10]} max={10} step={1} />
+      <Modal />
       <SignInForm onSubmit={test} />
       <ForgotPasswordForm onSubmit={test} />
       <SignUpForm onSubmit={test} />

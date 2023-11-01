@@ -1,6 +1,7 @@
 import { LogoutIcon } from '@/assets'
 import {
   Button,
+  CheckEmailForm,
   Checkbox,
   ForgotPasswordForm,
   FormValues,
@@ -13,6 +14,8 @@ import {
   TableCell,
   TableHeader,
   TableRow,
+  SignUpForm,
+  Slider,
 } from '@/components'
 
 export function App() {
@@ -58,6 +61,7 @@ export function App() {
           { label: 'React', value: 'Diana' },
         ]}
       />
+      <Slider defaultValue={[0, 10]} max={10} step={1} />
       <SignInForm onSubmit={test} />
       <ForgotPasswordForm onSubmit={test} />
       <Table>

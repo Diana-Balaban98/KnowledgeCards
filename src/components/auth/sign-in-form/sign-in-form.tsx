@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react'
-import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
-import { Button, Card, FormValues, Typography, signInSchema, useSignIn } from '@/components'
+
+import { Button, Card, FormValues, Typography, signInSchema, useAuthForm } from '@/components'
 import { ControlledCheckbox, ControlledInput } from '@/components/ui/controlled'
 
 import s from './sign-in-form.module.scss'
@@ -11,7 +11,7 @@ type Props = {
 }
 
 export const SignInForm: FunctionComponent<Props> = ({ onSubmit }) => {
-  const { control, errors, handleSubmit } = useSignIn(signInSchema, {
+  const { control, errors, handleSubmit } = useAuthForm(signInSchema, {
     email: '',
     password: '',
     rememberMe: false,

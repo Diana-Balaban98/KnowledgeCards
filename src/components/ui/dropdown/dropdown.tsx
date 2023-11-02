@@ -48,12 +48,11 @@ export const Dropdown = forwardRef<ElementRef<typeof DropdownMenu.Root>, Dropdow
           </DropdownMenu.Trigger>
           <DropdownMenu.Portal>
             <DropdownMenu.Content
-              // align={align}
+              align={align}
               className={classNames.dropdownContent}
               onClick={e => e.stopPropagation()}
               ref={ref}
-              side={'bottom'}
-              sideOffset={15}
+              sideOffset={5}
             >
               {items.map((item, index) => (
                 <DropdownMenu.Item

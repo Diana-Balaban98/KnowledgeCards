@@ -56,13 +56,13 @@
 
   outline: none;
 
-  & > svg {
+  & svg {
     margin-right: 6px;
   }
 
   &[data-disabled] {
     pointer-events: none;
-    color: var(--mauve-8);
+    color: var(--color-dark-500);
   }
 
   &[data-highlighted] {

@@ -6,7 +6,7 @@ import {
   FormValues,
   Typography,
   createNewPasswordSchema,
-  useSignIn,
+  useAuthForm,
 } from '@/components'
 import { ControlledInput } from '@/components/ui/controlled'
 import { DevTool } from '@hookform/devtools'
@@ -18,7 +18,7 @@ type Props = {
 }
 
 export const CreateNewPasswordForm: FunctionComponent<Props> = ({ onSubmit }) => {
-  const { control, errors, handleSubmit } = useSignIn(createNewPasswordSchema, { password: '' })
+  const { control, errors, handleSubmit } = useAuthForm(createNewPasswordSchema, { password: '' })
 
   return (
     <Card as={'article'} className={s.card}>

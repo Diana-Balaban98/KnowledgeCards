@@ -14,6 +14,7 @@ import {
   SignInForm,
   SignUpForm,
   Slider,
+  Typography,
 } from '@/components'
 
 export function App() {
@@ -21,6 +22,7 @@ export function App() {
     console.log(data)
   }
 
+  // @ts-ignore
   return (
     <>
       <Button variant={'primary'}>Button Primary</Button>
@@ -59,8 +61,18 @@ export function App() {
           { label: 'React', value: 'Diana' },
         ]}
       />
+      <Modal
+        title={'Add New Card'}
+        trigger={
+          <Button>
+            <Typography as={'span'} variant={'subtitle2'}>
+              Trigger
+            </Typography>
+          </Button>
+        }
+      />
+
       <Slider defaultValue={[0, 10]} max={10} step={1} />
-      <Modal />
       <SignInForm onSubmit={test} />
       <ForgotPasswordForm onSubmit={test} />
       <SignUpForm onSubmit={test} />

@@ -85,6 +85,27 @@ input {
   background-color: var(--green-5);
 }
 
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.root {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  max-width: 54.2rem;
+
+  .header {
+    padding: 1.8rem 2.4rem;
+    border-bottom: 1px solid var(--color-dark-500);
+  }
+}
+
 .Button.green:focus {
   box-shadow: 0 0 0 2px var(--green-7);
 }
@@ -149,26 +170,4 @@ input {
 
 .Input:focus {
   box-shadow: 0 0 0 2px var(--violet-8);
-}
-
-@keyframes overlayShow {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes contentShow {
-  from {
-    transform: translate(-50%, -48%) scale(0.96);
-    opacity: 0;
-  }
-
-  to {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
 }

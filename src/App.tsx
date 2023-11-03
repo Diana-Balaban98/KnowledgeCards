@@ -66,11 +66,13 @@ export function App() {
         trigger={
           <Button>
             <Typography as={'span'} variant={'subtitle2'}>
-              Trigger
+              Add card
             </Typography>
           </Button>
         }
-      />
+      >
+        <Input />
+      </Modal>
 
       <Slider defaultValue={[0, 10]} max={10} step={1} />
       <SignInForm onSubmit={test} />

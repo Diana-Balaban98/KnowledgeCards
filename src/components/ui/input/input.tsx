@@ -90,7 +90,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
               onClick={showPasswordHandler}
               type={'button'}
             >
-              {showPass ? <EyeIcon /> : <EyeOffIcon />}
+              {showPass ? <EyeOffIcon /> : <EyeIcon />}
             </button>
           )}
         </div>

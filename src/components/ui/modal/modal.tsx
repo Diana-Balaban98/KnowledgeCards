@@ -33,7 +33,7 @@ export const Modal = forwardRef<ElementRef<typeof RadixModal.Root>, ModalProps>(
                       {title}
                     </Typography>
                     <RadixModal.Close asChild>
-                      <button aria-label={'Close'} className={s.IconButton}>
+                      <button aria-label={'Close'} className={s.iconButton}>
                         <Cross2Icon />
                       </button>
                     </RadixModal.Close>

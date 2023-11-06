@@ -70,9 +70,7 @@ export function App() {
             </Typography>
           </Button>
         }
-      >
-        <Input />
-      </Modal>
+      ></Modal>
 
       <Slider defaultValue={[0, 10]} max={10} step={1} />
       <SignInForm onSubmit={test} />

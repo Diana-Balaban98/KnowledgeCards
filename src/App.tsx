@@ -1,11 +1,12 @@
 import { LogoutIcon } from '@/assets'
 import {
   Button,
-  CheckEmailForm,
   Checkbox,
   ForgotPasswordForm,
   FormValues,
   Input,
+  Modal,
+  PersonalInfo,
   RadioGroup,
   Select,
   SignInForm,
@@ -14,8 +15,8 @@ import {
   TableCell,
   TableHeader,
   TableRow,
-  SignUpForm,
   Slider,
+  Typography,
 } from '@/components'
 
 export function App() {
@@ -61,6 +62,17 @@ export function App() {
           { label: 'React', value: 'Diana' },
         ]}
       />
+      <Modal
+        title={'Add New Card'}
+        trigger={
+          <Button>
+            <Typography as={'span'} variant={'subtitle2'}>
+              Add card
+            </Typography>
+          </Button>
+        }
+      ></Modal>
+
       <Slider defaultValue={[0, 10]} max={10} step={1} />
       <SignInForm onSubmit={test} />
       <ForgotPasswordForm onSubmit={test} />

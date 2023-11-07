@@ -1,9 +1,7 @@
 import { LogoutIcon } from '@/assets'
 import {
   Button,
-  CheckEmailForm,
   Checkbox,
-  CreateNewPasswordForm,
   ForgotPasswordForm,
   FormValues,
   Input,
@@ -12,7 +10,11 @@ import {
   RadioGroup,
   Select,
   SignInForm,
-  SignUpForm,
+  Table,
+  TableBody,
+  TableCell,
+  TableHeader,
+  TableRow,
   Slider,
   Typography,
 } from '@/components'
@@ -22,7 +24,6 @@ export function App() {
     console.log(data)
   }
 
-  // @ts-ignore
   return (
     <>
       <Button variant={'primary'}>Button Primary</Button>
@@ -75,10 +76,24 @@ export function App() {
       <Slider defaultValue={[0, 10]} max={10} step={1} />
       <SignInForm onSubmit={test} />
       <ForgotPasswordForm onSubmit={test} />
-      <SignUpForm onSubmit={test} />
-      <CreateNewPasswordForm onSubmit={test} />
-      <PersonalInfo />
-      <CheckEmailForm />
+      <Table>
+        <TableHeader
+          columns={[
+            { key: '1', title: 'Name' },
+            { key: '2', title: 'Cards' },
+            { key: '3', title: 'Last Updated' },
+            { key: '4', title: 'Created by' },
+          ]}
+        />
+        <TableBody>
+          <TableRow>
+            <TableCell>Pack Name</TableCell>
+            <TableCell>4</TableCell>
+            <TableCell>18.03.2021</TableCell>
+            <TableCell>Ivan Ivanov</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
     </>
   )
 }

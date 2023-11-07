@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
-export const useSignIn = (
+export const useAuthForm = (
   schemaForm: z.ZodType<FormValues>,
   defaultValues: Partial<FormValues>
 ) => {
@@ -18,7 +18,7 @@ export const useSignIn = (
 
   return {
     control,
-    errors,
+    errors: errors,
     handleSubmit,
   }
 }

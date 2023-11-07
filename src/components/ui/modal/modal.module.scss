@@ -1,0 +1,47 @@
+/* reset */
+button,
+fieldset,
+input {
+  all: unset;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.root {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  max-width: 54.2rem;
+
+  .header {
+    padding: 1.8rem 2.4rem;
+    border-bottom: 1px solid var(--color-dark-500);
+  }
+}
+
+.iconButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+
+  font-family: inherit;
+  color: var(--color-light-100);
+
+  &:hover {
+    color: var(--color-accent-500);
+  }
+}

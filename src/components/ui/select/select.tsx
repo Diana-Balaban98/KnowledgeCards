@@ -7,12 +7,12 @@ import { clsx } from 'clsx'
 
 import s from './select.module.scss'
 
-type Options = {
+export type Options = {
   label: string
   value: string
 }
 
-type Props = {
+export type Props = {
   aria?: string
   className?: string
   disabled?: boolean

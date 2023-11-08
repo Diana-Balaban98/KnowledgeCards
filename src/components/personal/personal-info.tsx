@@ -1,15 +1,19 @@
-import { useState } from 'react'
+import { FunctionComponent, useState } from 'react'
 
 import { EditIcon, LogoutIcon, PersonalInfoIcon } from '@/assets'
 import { Button, Card, Input, Typography } from '@/components'
 
 import s from './personal-info.module.scss'
 
-export const PersonalInfo = () => {
+type Props = {
+  email: string
+  namePerson: string
+}
+
+export const PersonalInfo: FunctionComponent<Props> = ({ email, namePerson }) => {
   const [editInfo, setEditInfo] = useState(false)
 
   const togglePersonalInfo = () => setEditInfo(!editInfo)
-  // const navigate = useNavigate()
 
   return (
     <Card as={'article'} className={s.card}>
@@ -29,7 +33,12 @@ export const PersonalInfo = () => {
         <>
           <form className={s.form}>
             <div className={s.inputLine}>
-              <Input id={'editInfo'} label={'Nickname'} placeholder={'Nickname'} value={'Ivan'} />
+              <Input
+                id={'editInfo'}
+                label={'Nickname'}
+                placeholder={'Nickname'}
+                value={namePerson}
+              />
             </div>
             <Button>Save Changes</Button>
           </form>
@@ -37,13 +46,15 @@ export const PersonalInfo = () => {
       ) : (
         <>
           <label className={s.containerName}>
-            <Typography variant={'h1'}>Ivan</Typography>
+            <Typography className={s.name} variant={'h1'}>
+              {namePerson}
+            </Typography>
             <Button className={s.edit} onClick={togglePersonalInfo}>
               <EditIcon />
             </Button>
           </label>
           <Typography className={s.email} variant={'body2'}>
-            j&johnson@gmail.com
+            {email}
           </Typography>
           <Button variant={'secondary'}>
             <LogoutIcon />

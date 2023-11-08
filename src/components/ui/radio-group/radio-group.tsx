@@ -10,16 +10,16 @@ export type Option = {
   value: string
 }
 
-export type RadioGroupProps = {
+export type Props = {
   disabled?: boolean
   id?: string
   name: string
   onValueChange?: (value: string) => void
   options: Option[]
   value?: string
-}
+} & RadixRadioGroup.RadioGroupProps
 
-export const RadioGroup = forwardRef<ElementRef<typeof RadixRadioGroup.Root>, RadioGroupProps>(
+export const RadioGroup = forwardRef<ElementRef<typeof RadixRadioGroup.Root>, Props>(
   ({ disabled, id, name, options, ...restProps }, ref) => {
     return (
       <RadixRadioGroup.Root name={name} {...restProps} className={s.box} ref={ref}>

@@ -22,7 +22,7 @@ type DropdownProps = {
 } & DropdownMenu.DropdownMenuProps
 
 export const Dropdown = forwardRef<ElementRef<typeof DropdownMenu.Root>, DropdownProps>(
-  ({ align = 'start', ariaLabel, className, heightTrigger, items, trigger, widthTrigger }, ref) => {
+  ({ align = 'end', ariaLabel, className, heightTrigger, items, trigger, widthTrigger }, ref) => {
     const classNames = {
       box: s.box,
       btn: s.btn,

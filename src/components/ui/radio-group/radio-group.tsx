@@ -10,7 +10,7 @@ export type Option = {
   value: string
 }
 
-export type Props = {
+type Props = {
   disabled?: boolean
   id?: string
   name: string

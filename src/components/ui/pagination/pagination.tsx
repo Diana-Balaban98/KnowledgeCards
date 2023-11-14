@@ -1,7 +1,6 @@
 import { FunctionComponent, useState } from 'react'
 
 import { ArrowBackIcon, ArrowForwardIcon } from '@/assets'
-import { Button } from '@/components'
 import { usePagination } from '@/components/ui/pagination/usePagination'
 
 import s from './pagination.module.scss'
@@ -24,13 +23,11 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
 
   const itemsArray = usePagination({ currentPage: page, siblingCount, totalPageCount })
 
-  console.log(page)
-
   return (
     <div className={s.paginationContainer}>
-      <Button onClick={() => setPage(page - 1)}>
+      <button onClick={() => setPage(page - 1)}>
         <ArrowBackIcon />
-      </Button>
+      </button>
       <div>
         {itemsArray.map((el, index) => (
           <button
@@ -42,9 +39,9 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           </button>
         ))}
       </div>
-      <Button onClick={() => setPage(page + 1)}>
+      <button onClick={() => setPage(page + 1)}>
         <ArrowForwardIcon />
-      </Button>
+      </button>
     </div>
   )
 }

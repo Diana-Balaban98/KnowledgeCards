@@ -12,7 +12,7 @@ export type Options = {
   value: string
 }
 
-export type Props = {
+type Props = {
   aria?: string
   className?: string
   disabled?: boolean

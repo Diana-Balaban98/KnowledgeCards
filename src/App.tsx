@@ -43,6 +43,8 @@ export function App() {
           </TableRow>
         </TableBody>
       </Table>
+
+      <Pagination pageSize={2} totalCount={100} />
     </>
   )
 }

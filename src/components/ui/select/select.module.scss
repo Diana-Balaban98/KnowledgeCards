@@ -33,6 +33,7 @@
 
 .selectIcon {
   height: 16px;
+  margin-left: 4px;
   transition: all 0.7s ease;
 
   .selectTrigger[data-state='open'] & {

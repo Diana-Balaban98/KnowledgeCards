@@ -1,6 +1,8 @@
 export { default as ArrowBackIcon } from '@/assets/icons-components/ArrowBackIcon'
 export { default as ArrowDownIcon } from '@/assets/icons-components/ArrowDownIcon'
 export { default as ArrowForwardIcon } from '@/assets/icons-components/ArrowForwardIcon'
+export { default as ArrowIosBackIcon } from '@/assets/icons-components/ArrowIosBackIcon'
+export { default as ArrowIosForwardIcon } from '@/assets/icons-components/ArrowIosForwardIcon'
 export { default as ArrowUpIcon } from '@/assets/icons-components/ArrowUpIcon'
 export { default as CheckEmailIcon } from '@/assets/icons-components/CheckEmailIcon'
 export { default as CheckIcon } from '@/assets/icons-components/CheckIcon'
